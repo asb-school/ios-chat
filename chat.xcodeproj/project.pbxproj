@@ -22,14 +22,14 @@
 		4648F20A170E5EFA0000C178 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4648F20C170E5EFA0000C178 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4648F20E170E5EFA0000C178 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4648F212170E5EFA0000C178 /* chat-Info.plist */ = {isa = PBXFileReference; path = "chat-Info.plist"; sourceTree = "<group>"; };
+		4648F212170E5EFA0000C178 /* chat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chat-Info.plist"; sourceTree = "<group>"; };
 		4648F214170E5EFA0000C178 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4648F216170E5EFA0000C178 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4648F218170E5EFA0000C178 /* chat-Prefix.pch */ = {isa = PBXFileReference; path = "chat-Prefix.pch"; sourceTree = "<group>"; };
-		4648F219170E5EFA0000C178 /* chatAppDelegate.h */ = {isa = PBXFileReference; path = chatAppDelegate.h; sourceTree = "<group>"; };
+		4648F218170E5EFA0000C178 /* chat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chat-Prefix.pch"; sourceTree = "<group>"; };
+		4648F219170E5EFA0000C178 /* chatAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chatAppDelegate.h; sourceTree = "<group>"; };
 		4648F21A170E5EFA0000C178 /* chatAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatAppDelegate.m; sourceTree = "<group>"; };
 		4648F21D170E5EFA0000C178 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4648F21F170E5EFA0000C178 /* chatViewController.h */ = {isa = PBXFileReference; path = chatViewController.h; sourceTree = "<group>"; };
+		4648F21F170E5EFA0000C178 /* chatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chatViewController.h; sourceTree = "<group>"; };
 		4648F220170E5EFA0000C178 /* chatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
