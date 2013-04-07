@@ -19,8 +19,15 @@
 		4648F215170E5EFA0000C178 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4648F213170E5EFA0000C178 /* InfoPlist.strings */; };
 		4648F217170E5EFA0000C178 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4648F216170E5EFA0000C178 /* main.m */; };
 		4648F21B170E5EFA0000C178 /* chatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4648F21A170E5EFA0000C178 /* chatAppDelegate.m */; };
-		4648F21E170E5EFA0000C178 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4648F21C170E5EFA0000C178 /* MainStoryboard.storyboard */; };
+		4648F21E170E5EFA0000C178 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4648F21C170E5EFA0000C178 /* MainStoryboard_iPad.storyboard */; };
 		4648F221170E5EFA0000C178 /* chatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4648F220170E5EFA0000C178 /* chatViewController.m */; };
+		46A570271712291200C42221 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A5701D1712291200C42221 /* SocketIO.m */; };
+		46A570281712291200C42221 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A5701F1712291200C42221 /* SocketIOPacket.m */; };
+		46A570291712291200C42221 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A570211712291200C42221 /* SocketIOJSONSerialization.m */; };
+		46A5702A1712291200C42221 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A570241712291200C42221 /* SocketIOTransportWebsocket.m */; };
+		46A5702B1712291200C42221 /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A570261712291200C42221 /* SocketIOTransportXHR.m */; };
+		46A5703117122F0600C42221 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46A5703017122F0600C42221 /* Default-568h@2x.png */; };
+		46A5708017122F9D00C42221 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A5707F17122F9D00C42221 /* MainStoryboard_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +51,22 @@
 		4648F218170E5EFA0000C178 /* chat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chat-Prefix.pch"; sourceTree = "<group>"; };
 		4648F219170E5EFA0000C178 /* chatAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chatAppDelegate.h; sourceTree = "<group>"; };
 		4648F21A170E5EFA0000C178 /* chatAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatAppDelegate.m; sourceTree = "<group>"; };
-		4648F21D170E5EFA0000C178 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4648F21D170E5EFA0000C178 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		4648F21F170E5EFA0000C178 /* chatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chatViewController.h; sourceTree = "<group>"; };
 		4648F220170E5EFA0000C178 /* chatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatViewController.m; sourceTree = "<group>"; };
+		46A5701C1712291200C42221 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		46A5701D1712291200C42221 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		46A5701E1712291200C42221 /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		46A5701F1712291200C42221 /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		46A570201712291200C42221 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		46A570211712291200C42221 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		46A570221712291200C42221 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		46A570231712291200C42221 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		46A570241712291200C42221 /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		46A570251712291200C42221 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		46A570261712291200C42221 /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		46A5703017122F0600C42221 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		46A5707F17122F9D00C42221 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +103,7 @@
 		4648F1FB170E5EFA0000C178 = {
 			isa = PBXGroup;
 			children = (
-				462E16111711B0C200279F8B /* libicucore.dylib */,
-				462E160F1711B0AB00279F8B /* Security.framework */,
-				462E160D1711B09A00279F8B /* CFNetwork.framework */,
+				46A5701B1712290100C42221 /* socket.io */,
 				462E16021711B02100279F8B /* SocketRocket */,
 				4648F210170E5EFA0000C178 /* chat */,
 				4648F209170E5EFA0000C178 /* Frameworks */,
@@ -104,6 +122,9 @@
 		4648F209170E5EFA0000C178 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				462E16111711B0C200279F8B /* libicucore.dylib */,
+				462E160F1711B0AB00279F8B /* Security.framework */,
+				462E160D1711B09A00279F8B /* CFNetwork.framework */,
 				4648F20A170E5EFA0000C178 /* UIKit.framework */,
 				4648F20C170E5EFA0000C178 /* Foundation.framework */,
 				4648F20E170E5EFA0000C178 /* CoreGraphics.framework */,
@@ -116,7 +137,8 @@
 			children = (
 				4648F219170E5EFA0000C178 /* chatAppDelegate.h */,
 				4648F21A170E5EFA0000C178 /* chatAppDelegate.m */,
-				4648F21C170E5EFA0000C178 /* MainStoryboard.storyboard */,
+				4648F21C170E5EFA0000C178 /* MainStoryboard_iPad.storyboard */,
+				46A5707F17122F9D00C42221 /* MainStoryboard_iPhone.storyboard */,
 				4648F21F170E5EFA0000C178 /* chatViewController.h */,
 				4648F220170E5EFA0000C178 /* chatViewController.m */,
 				4648F211170E5EFA0000C178 /* Supporting Files */,
@@ -127,12 +149,31 @@
 		4648F211170E5EFA0000C178 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46A5703017122F0600C42221 /* Default-568h@2x.png */,
 				4648F212170E5EFA0000C178 /* chat-Info.plist */,
 				4648F213170E5EFA0000C178 /* InfoPlist.strings */,
 				4648F216170E5EFA0000C178 /* main.m */,
 				4648F218170E5EFA0000C178 /* chat-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46A5701B1712290100C42221 /* socket.io */ = {
+			isa = PBXGroup;
+			children = (
+				46A5701C1712291200C42221 /* SocketIO.h */,
+				46A5701D1712291200C42221 /* SocketIO.m */,
+				46A5701E1712291200C42221 /* SocketIOPacket.h */,
+				46A5701F1712291200C42221 /* SocketIOPacket.m */,
+				46A570201712291200C42221 /* SocketIOJSONSerialization.h */,
+				46A570211712291200C42221 /* SocketIOJSONSerialization.m */,
+				46A570221712291200C42221 /* SocketIOTransport.h */,
+				46A570231712291200C42221 /* SocketIOTransportWebsocket.h */,
+				46A570241712291200C42221 /* SocketIOTransportWebsocket.m */,
+				46A570251712291200C42221 /* SocketIOTransportXHR.h */,
+				46A570261712291200C42221 /* SocketIOTransportXHR.m */,
+			);
+			name = socket.io;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +202,7 @@
 		4648F1FD170E5EFA0000C178 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 4648F200170E5EFA0000C178 /* Build configuration list for PBXProject "chat" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -186,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4648F215170E5EFA0000C178 /* InfoPlist.strings in Resources */,
-				4648F21E170E5EFA0000C178 /* MainStoryboard.storyboard in Resources */,
+				4648F21E170E5EFA0000C178 /* MainStoryboard_iPad.storyboard in Resources */,
+				46A5703117122F0600C42221 /* Default-568h@2x.png in Resources */,
+				46A5708017122F9D00C42221 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +246,11 @@
 				462E160A1711B02100279F8B /* base64.c in Sources */,
 				462E160B1711B02100279F8B /* NSData+SRB64Additions.m in Sources */,
 				462E160C1711B02100279F8B /* SRWebSocket.m in Sources */,
+				46A570271712291200C42221 /* SocketIO.m in Sources */,
+				46A570281712291200C42221 /* SocketIOPacket.m in Sources */,
+				46A570291712291200C42221 /* SocketIOJSONSerialization.m in Sources */,
+				46A5702A1712291200C42221 /* SocketIOTransportWebsocket.m in Sources */,
+				46A5702B1712291200C42221 /* SocketIOTransportXHR.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,12 +265,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4648F21C170E5EFA0000C178 /* MainStoryboard.storyboard */ = {
+		4648F21C170E5EFA0000C178 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4648F21D170E5EFA0000C178 /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,6 +331,7 @@
 				INFOPLIST_FILE = "chat/chat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -295,6 +344,7 @@
 				INFOPLIST_FILE = "chat/chat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

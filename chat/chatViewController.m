@@ -14,9 +14,40 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+    
+    // Setup Socket IO
+    socketIO = [[SocketIO alloc] initWithDelegate:self];
+
+    //socketIO.useSecure = YES;
+    
+    [socketIO connectToHost:@"localhost" onPort:3000];
 }
 
 #pragma mark - View lifecycle
+
+
+// Socket IO Event Functions
+
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
+{
+    NSLog(@"didReceiveEvent()");
+    
+    // SocketIO Callback
+    SocketIOCallback cb = ^(id argsData)
+    {
+        NSDictionary *response = argsData;
+        
+        // do something with response
+        NSLog(@"ack arrived: %@", response);
+    };
+    
+    [socketIO sendMessage:@"hello back!" withAcknowledge:cb];
+}
+
+- (void) socketIO:(SocketIO *)socket failedToConnectWithError:(NSError *)error
+{
+    NSLog(@"failedToConnectWithError() %@", error);
+}
 
 - (void)viewDidLoad
 {
