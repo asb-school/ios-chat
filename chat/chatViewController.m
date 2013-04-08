@@ -10,6 +10,19 @@
 
 @implementation chatViewController
 
+// --------------------------------------------------------------
+// ON SEND MESSAGE BUTTON PRESS
+
+- (IBAction)onSendButtonAction:(id)sender
+{
+    // Send message given text
+    [socketController sendMessageOnChannel:@"main" andMessage:messageField.text];
+    
+    // Clear text field
+    [messageField setText:@""];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

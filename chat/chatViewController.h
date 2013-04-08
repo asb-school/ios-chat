@@ -13,6 +13,9 @@
 @interface chatViewController : UIViewController
 {
     SocketController *socketController;
+    __weak IBOutlet UITextField *messageField;
 }
+
+- (IBAction)onSendButtonAction:(id)sender;
 
 @end
