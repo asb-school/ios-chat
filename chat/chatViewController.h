@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SocketIO.h"
+#import "SocketController.h"
 
-@interface chatViewController : UIViewController <SocketIODelegate>
+
+@interface chatViewController : UIViewController
 {
-    SocketIO *socketIO;
+    SocketController *socketController;
 }
 
 @end
