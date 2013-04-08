@@ -20,6 +20,25 @@
     
     // Clear text field
     [messageField setText:@""];
+    
+    
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // Send a message if it's the message field
+    if (textField == messageField)
+    {
+        [socketController sendMessageOnChannel:@"main" andMessage:textField.text];
+    }
+    
+    // Clear text field
+    [textField setText:@""];
+    
+    // Clear keyboard
+    //[textField resignFirstResponder];
+    return NO;
 }
 
 
@@ -35,6 +54,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Set text field delegate
+    messageField.delegate = self;
  
     // Create a socket controller
     socketController = [SocketController new];

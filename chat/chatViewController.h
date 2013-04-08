@@ -10,10 +10,11 @@
 #import "SocketController.h"
 
 
-@interface chatViewController : UIViewController
+@interface chatViewController : UIViewController <UITextFieldDelegate>
 {
     SocketController *socketController;
     __weak IBOutlet UITextField *messageField;
+    __weak IBOutlet UITableView *messageView;
 }
 
 - (IBAction)onSendButtonAction:(id)sender;

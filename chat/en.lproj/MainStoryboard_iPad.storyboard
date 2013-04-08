@@ -20,7 +20,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C5d-V6-7ma">
-                                <rect key="frame" x="20" y="286" width="73" height="44"/>
+                                <rect key="frame" x="20" y="544" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="SEND">
@@ -34,17 +34,23 @@
                                     <action selector="onSendButtonAction:" destination="2" eventType="touchUpInside" id="x3l-XE-2Gj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Rbg-m3-zzQ">
-                                <rect key="frame" x="20" y="239" width="320" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" id="Rbg-m3-zzQ">
+                                <rect key="frame" x="20" y="500" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yaf-Uw-pwZ">
+                                <rect key="frame" x="20" y="78" width="320" height="396"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="messageField" destination="Rbg-m3-zzQ" id="kp0-Lg-l0e"/>
+                        <outlet property="messageView" destination="yaf-Uw-pwZ" id="aM4-J8-v1z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -58,6 +64,7 @@
             <relationships>
                 <relationship kind="action" name="onSendButtonAction:"/>
                 <relationship kind="outlet" name="messageField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="messageView" candidateClass="UITableView"/>
             </relationships>
         </class>
     </classes>
