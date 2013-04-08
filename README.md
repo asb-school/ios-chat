@@ -9,7 +9,7 @@ This is a chat application for iOS devices implemented on top of Socket.IO.
 
 ### iOS Client
 
-Connects to the Node.JS Socket.IO server on port 5050. Make sure it's running. Have fun?
+Connects to the Node.JS Socket.IO server on port 5050. Make sure the server is running.
 
 ### Node.JS Socket.IO server
 
