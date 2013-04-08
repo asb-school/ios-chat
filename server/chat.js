@@ -10,10 +10,13 @@ io.sockets.on('connection', function (socket)
 	// On received message
 	socket.on('main', function (data)
 	{
+
+		console.log('dump:');
+
 		// Print to console
-		console.log(data);
+		console.dir(data);
 
 		// Echo data to client
-		socket.emit('main', { msg: 'echo:' + data });
+		socket.emit('main', { msg: data.msg });
 	});
 });
