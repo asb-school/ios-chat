@@ -52,20 +52,34 @@
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
+    // Debug logging
     NSLog(@"didReceiveEvent()");
+    NSLog(@"Data: %@", packet.data);
     
-//    [self performSelectorOnMainThread:callback withObject:self waitUntilDone:NO];
+    NSError *jsonParseError;
     
-    [objectRef performSelector: callbackRef withObject:@"hey"];
+    // Convert packet data string into NSData
+    NSData *jsonData = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // Convert JSON into Foundation object
+    NSDictionary *packetData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonParseError];
+    
+    // Get the message
+    for (NSDictionary *key in [packetData objectForKey:@"args"])
+    {
+        NSLog(@"message: %@", [key objectForKey:@"msg"]);
+        
+        [objectRef performSelectorOnMainThread:callbackRef withObject:[key objectForKey:@"msg"] waitUntilDone:NO];
+    }
     
     // SocketIO Callback
-    SocketIOCallback cb = ^(id argsData)
-    {
-        NSDictionary *response = argsData;
-        
-        // do something with response
-        NSLog(@"ack arrived: %@", response);
-    };
+//    SocketIOCallback cb = ^(id argsData)
+//    {
+//        NSDictionary *response = argsData;
+//        
+//        // do something with response
+//        NSLog(@"ack arrived: %@", response);
+//    };
     
 //    [socketIOHandler sendMessage:@"hello back!" withAcknowledge:cb];
 }

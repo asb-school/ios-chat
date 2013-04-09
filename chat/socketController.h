@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SocketIO.h"
+#import "SocketIOPacket.h"
 
 @interface SocketController : NSObject <SocketIODelegate>
 {
