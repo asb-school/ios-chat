@@ -9,6 +9,55 @@
 #import "chatViewController.h"
 
 @implementation chatViewController
+{
+    NSMutableArray *tableData;
+}
+
+
+- (void)initialSetup
+{
+    tableData = [NSMutableArray new];
+    
+    [tableData addObject:@"one"];
+    [tableData addObject:@"two"];
+    [tableData addObject:@"three"];
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [tableData count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    return cell;
+}
+
+
+- (void)updateMessageTable:(NSString *)givenMessage
+{
+    // Add another item to the table
+    [tableData addObject:givenMessage];
+ 
+    // Reload table view
+    [tableView reloadData];
+    
+    // Scroll to bottom
+    [tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow:[tableData count]-1 inSection:0] atScrollPosition: UITableViewScrollPositionTop animated: YES];
+}
+
 
 // --------------------------------------------------------------
 // ON SEND MESSAGE BUTTON PRESS
@@ -20,8 +69,6 @@
     
     // Clear text field
     [messageField setText:@""];
-    
-    
 }
 
 
@@ -55,11 +102,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [self initialSetup];
+    
     // Set text field delegate
     messageField.delegate = self;
- 
+    
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+// 
     // Create a socket controller
     socketController = [SocketController new];
+    
+    
+    [socketController setUpdateCallbackFunction:self withSelect:@selector(updateMessageTable:)];
+    
+//    SEL callback = @selector(updateMessageTable:);
+    
+//    [socketController setUpdateCallbackFunction:callback];
     
     // Setup connection
     [socketController setupConnection];

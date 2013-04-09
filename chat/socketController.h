@@ -14,12 +14,15 @@
     // PROPERTIES
     
     SocketIO *socketIOHandler;
+    SEL callbackRef;
+    id objectRef;
 }
 
 
 // FUNCTIONS
 
 - (void)setupConnection;
-- (void)sendMessageOnChannel:(NSString*) channel andMessage:(NSString*) message;
+- (void)sendMessageOnChannel:(NSString*)channel andMessage:(NSString*)message;
+- (void)setUpdateCallbackFunction:(id)object withSelect:(SEL)callback;
 
 @end

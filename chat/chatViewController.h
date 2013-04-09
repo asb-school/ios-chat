@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "SocketController.h"
+#import "ChatMessagesTableController.h"
 
 
-@interface chatViewController : UIViewController <UITextFieldDelegate>
+@interface chatViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     SocketController *socketController;
     __weak IBOutlet UITextField *messageField;
-    __weak IBOutlet UITableView *messageView;
+    IBOutlet UITableView *tableView;
 }
 
 - (IBAction)onSendButtonAction:(id)sender;
+- (void)updateMessageTable:(NSString *)givenMessage;
 
 @end

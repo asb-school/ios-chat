@@ -24,6 +24,13 @@
 }
 
 
+- (void)setUpdateCallbackFunction:(id)object withSelect:(SEL)callback
+{
+    objectRef = object;
+    callbackRef = callback;
+}
+
+
 // --------------------------------------------------------------
 // SEND MESSAGE
 
@@ -47,6 +54,10 @@
 {
     NSLog(@"didReceiveEvent()");
     
+//    [self performSelectorOnMainThread:callback withObject:self waitUntilDone:NO];
+    
+    [objectRef performSelector: callbackRef withObject:@"hey"];
+    
     // SocketIO Callback
     SocketIOCallback cb = ^(id argsData)
     {
@@ -56,7 +67,7 @@
         NSLog(@"ack arrived: %@", response);
     };
     
-    [socketIOHandler sendMessage:@"hello back!" withAcknowledge:cb];
+//    [socketIOHandler sendMessage:@"hello back!" withAcknowledge:cb];
 }
 
 
