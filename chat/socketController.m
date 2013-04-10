@@ -56,6 +56,12 @@
     NSLog(@"didReceiveEvent()");
     NSLog(@"Data: %@", packet.data);
     
+    // Check if we have the right event
+//    if (packet.name == 'main')
+//    {
+//        // do stuff
+//    }
+    
     NSError *jsonParseError;
     
     // Convert packet data string into NSData
