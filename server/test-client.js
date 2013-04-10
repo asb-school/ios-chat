@@ -1,25 +1,80 @@
+/*
+**
+**	iOS CHAT
+**	Andrew Breja
+**
+** 	Test Client
+**	This client will send messages only. Use server console
+**	to see received messages.
+**
+*/
+
+// --------------------------------------------------------------
+// IMPORTS
+
+var prompt = require('prompt');
 var io = require('socket.io-client');
+
+
+// --------------------------------------------------------------
+// SETUP
+
 var socket = io.connect('localhost', { port:5050 });
 
-// On connection
+// Prompter setup options
+prompt.delimiter = '';
+prompt.message = 'msg ';
+
+var property = 
+{
+	name: 'data',
+	message: '>'
+};
+
+
+// --------------------------------------------------------------
+// CONNECTION
+
 socket.on('connect', function () 
 {
-	console.log('Connected!');
+	// Start the prompter
+	prompt.start();
+
+	// Prompt
+	prompter();
 });
 
 
-// Send data function
-function sendData ()
+// --------------------------------------------------------------
+// PROMPTER
+
+function prompter()
 {
-	socket.emit('main', { msg: 'lol noob' });
+	prompt.get(property, function (error, result)
+	{
+		if (error)
+		{
+			console.log('Error:', error);
+		}
+		else
+		{
+			// Send data
+			sendData(result);
+
+			// Reset prompter
+			prompter();
+		}
+	});
 }
 
-// On receive data
-socket.on('main', function (data)
-{
-	// Print to console
-	console.log(data);
-});
 
-// Every 5 seconds send some data
-setInterval(sendData, 5000);
+// --------------------------------------------------------------
+// SEND DATA
+
+function sendData(message)
+{
+	console.log('Sending message:', message.data);
+
+	// Send out message
+	socket.emit('main', { msg: message.data });
+}

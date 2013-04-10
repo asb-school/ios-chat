@@ -1,6 +1,22 @@
+/*
+**
+**	iOS CHAT
+**	Andrew Breja
+**
+**	Chat Server
+**	With magic sauce Socket.IO
+**
+*/
+
+
+// --------------------------------------------------------------
+// IMPORTS
+
 var io = require('socket.io').listen(5050);
 
-console.log('Started chat server');
+
+// --------------------------------------------------------------
+// ON CONNECTION
 
 io.sockets.on('connection', function (socket)
 {
@@ -10,13 +26,16 @@ io.sockets.on('connection', function (socket)
 	// On received message
 	socket.on('main', function (data)
 	{
-
-		console.log('dump:');
-
-		// Print to console
-		console.dir(data);
-
 		// Echo data to client
 		socket.emit('main', { msg: data.msg });
+
+		// Broadcast to everyone else
+		socket.broadcast.emit('main', { msg: data.msg });
 	});
 });
+
+
+// --------------------------------------------------------------
+// GREETING
+
+console.log('Started chat server');
